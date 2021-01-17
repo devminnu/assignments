@@ -17,7 +17,7 @@ docker container run -d -p 3306:3306 --network net-location-app \
 2.Make sure rabbitmq is running on default port with default user and password
 if not then create rabbitmq container
 
-docker run -it -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
+docker container run -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
 
 3.Go to assignments/offers/offerspub and run below command
 go run main.go
