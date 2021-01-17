@@ -1,11 +1,15 @@
 # assignments
 
-1.Make sure mysql is running at port 3306 and DB offers is created with below credentails
+# checkout
 
-MYSQL_ADDON_USER: "admin"
-MYSQL_ADDON_PASSWORD: "admin"
+git clone https://github.com/devminnu/assignments.git
 
-If not then launch docker container for mysql db
+1.Make sure mysql is running at port 3306 and DB offers is created with below credentails.
+
+MYSQL_ADDON_USER: "admin".
+MYSQL_ADDON_PASSWORD: "admin".
+
+If not then launch docker container for mysql db.
 
 docker container run -d -p 3306:3306 --network net-location-app \
 -e MYSQL_ROOT_PASSWORD=admin \

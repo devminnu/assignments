@@ -7,6 +7,11 @@ spec:
   - port: 5672
     protocol: TCP
     targetPort: 5672
+    name: s-port
+  - port: 15672
+    protocol: TCP
+    targetPort: 15672
+    name: q-port
   selector:
     run: rabbitmq
 status:
@@ -25,6 +30,7 @@ spec:
     name: rabbitmq
     ports:
     - containerPort: 5672
+    - containerPort: 15672
     resources: {}
     envFrom:
     - secretRef:

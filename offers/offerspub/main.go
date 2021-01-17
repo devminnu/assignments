@@ -17,8 +17,8 @@ func main() {
 	// db.Init()              //MY_SQL database initialization
 	// defer db.Get().Close() //Close db connection
 	pub.Init()
-	defer pub.GetChannel().Close() //Close RABBIT_MQ connection channel
-	defer pub.GetConnection().Close()
+	// defer pub.GetChannel().Close() //Close RABBIT_MQ connection channel
+	// defer pub.GetConnection().Close()
 	router.Init()
 	api.Init()
 	router := router.Get()
