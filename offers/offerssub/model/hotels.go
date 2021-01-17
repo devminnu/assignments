@@ -16,5 +16,5 @@ type Hotel struct {
 	Description string    `json:"description"`
 	RoomCount   int       `json:"room_count"`
 	Currency    string    `json:"currency"`
-	Fees        []Fees    `json:"fees" gorm:"foreignKey:HotelID;references:HotelID"`
+	// Fees        []Fees    `json:"fees" gorm:"foreignKey:HotelID;references:HotelID"`
 }

@@ -8,10 +8,10 @@ import (
 )
 
 func main() {
-	config.Load() //Load all config variable and values
-	logger.Init() //Initialize logger
-	db.Init()     //MY_SQL database initialization
-	// defer db.Get().Close() //Close db connection
+	config.Load()          //Load all config variable and values
+	logger.Init()          //Initialize logger
+	db.Init()              //MY_SQL database initialization
+	defer db.Get().Close() //Close db connection
 	consumer.Init()
 	defer consumer.GetChannel().Close() //Close RABBIT_MQ connection channel
 	defer consumer.GetConnection().Close()

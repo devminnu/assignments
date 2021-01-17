@@ -33,14 +33,14 @@ func Init() {
 	} else {
 		log.Get().Info("DB_CONNECTION_SUCCESSFULL")
 	}
-	db.DropTable(&model.Offer{})
-	db.DropTable(&model.Hotel{})
-	db.DropTable(&model.Room{})
-	db.DropTable(&model.RatePlan{})
-	db.DropTable(&model.Amenity{})
-	db.DropTable(&model.CancellationPolicy{})
-	db.DropTable(&model.OtherCondition{})
-	db.DropTable(&model.Fees{})
+	// db.DropTable(&model.Offer{})
+	// db.DropTable(&model.Hotel{})
+	// db.DropTable(&model.Room{})
+	// db.DropTable(&model.RatePlan{})
+	// db.DropTable(&model.Amenity{})
+	// db.DropTable(&model.CancellationPolicy{})
+	// db.DropTable(&model.OtherCondition{})
+	// db.DropTable(&model.Fee{})
 	//
 	db.CreateTable(&model.Offer{})
 	db.CreateTable(&model.Hotel{})
@@ -49,7 +49,7 @@ func Init() {
 	db.CreateTable(&model.Amenity{})
 	db.CreateTable(&model.CancellationPolicy{})
 	db.CreateTable(&model.OtherCondition{})
-	db.CreateTable(&model.Fees{})
+	db.CreateTable(&model.Fee{})
 }
 
 func Get() *gorm.DB {

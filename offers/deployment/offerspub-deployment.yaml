@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: offerspub
+  name: offerspub
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: offerspub
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: offerspub
+    spec:
+      containers:
+      - image: devminnu/offerspub
+        name: offerspub
+        ports:
+        - containerPort: 30003
+        resources: {}
+        envFrom:
+        - secretRef:
+            name: offerspub-secret
+status: {}

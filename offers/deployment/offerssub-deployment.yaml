@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: offerssub
+  name: offerssub
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: offerssub
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: offerssub
+    spec:
+      containers:
+      - image: devminnu/offerssub
+        name: offerssub
+        ports:
+        - containerPort: 30004
+        resources: {}
+        envFrom:
+        - secretRef:
+            name: offerssub-secret
+status: {}

@@ -1,0 +1,34 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: rabbitmq
+spec:
+  ports:
+  - port: 5672
+    protocol: TCP
+    targetPort: 5672
+  selector:
+    run: rabbitmq
+status:
+  loadBalancer: {}
+---
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: rabbitmq
+  name: rabbitmq
+spec:
+  containers:
+  - image: rabbitmq:3-management
+    name: rabbitmq
+    ports:
+    - containerPort: 5672
+    resources: {}
+    envFrom:
+    - secretRef:
+        name: rabbitmq-secret
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
