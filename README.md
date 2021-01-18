@@ -129,9 +129,13 @@ if you have docker for desktop installed and local kubernetes cluster such as mi
    -f mysql-db-secret.yaml \
    -f rabbitmq-secret.yaml \
    -f offerspub-secret.yaml \
-   -f offerssub-secret.yaml \
+   -f offerssub-secret.yaml
+
+   kubectl apply \
    -f mysql.yaml \
-   -f rabbitmq.yaml \
+   -f rabbitmq.yaml
+
+   k apply \
    -f offerspub-deployment.yaml \
    -f offerspub-svc.yaml \
    -f offerssub-deployment.yaml
