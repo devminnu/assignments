@@ -7,7 +7,7 @@ type Offers struct {
 
 //Offer Hotel Offer
 type Offer struct {
-	CmOfferID    string       `json:"cm_offer_id"` // gorm:"primary_key"`
+	CmOfferID    string       `json:"cm_offer_id" gorm:"unique"`
 	HotelID      string       `json:"hotel_id"`
 	Hotel        Hotel        `json:"hotel" gorm:"foreignKey:HotelID;references:HotelID"` //`json:"hotel" sql:"-"`
 	RoomID       string       `json:"room_id"`

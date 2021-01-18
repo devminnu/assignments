@@ -12,6 +12,7 @@ require (
 	github.com/sirupsen/logrus v1.7.0
 	github.com/spf13/viper v1.7.1
 	github.com/streadway/amqp v1.0.0
+	github.com/stretchr/testify v1.7.0
 	github.com/toorop/gin-logrus v0.0.0-20200831135515-d2ee50d38dae
 	google.golang.org/protobuf v1.24.0
 	gorm.io/driver/mysql v1.0.3
