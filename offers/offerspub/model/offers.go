@@ -19,7 +19,7 @@ type Offer struct {
 	Currency     string       `json:"currency"`
 	CheckIn      string       `json:"check_in"`
 	CheckOut     string       `json:"check_out"`
-	Fees         []Fees       `json:"fees" gorm:"foreignKey:CmOfferID;references:CmOfferID"`
+	Fees         []Fee        `json:"fees" gorm:"foreignKey:CmOfferID;references:CmOfferID"`
 }
 
 type OriginalData struct {

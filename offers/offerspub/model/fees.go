@@ -3,7 +3,7 @@ package model
 import "gorm.io/gorm"
 
 //Fees Hotel offer fees
-type Fees struct {
+type Fee struct {
 	gorm.Model
 	CmOfferID   string  `json:"cm_offer_id"`
 	Type        string  `json:"type"`
