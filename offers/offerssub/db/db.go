@@ -33,14 +33,14 @@ func Init() {
 	} else {
 		log.Get().Info("DB_CONNECTION_SUCCESSFULL")
 	}
-	db.DropTable(&model.Offer{})
-	db.DropTable(&model.Hotel{})
-	db.DropTable(&model.Room{})
-	db.DropTable(&model.RatePlan{})
-	db.DropTable(&model.Amenity{})
-	db.DropTable(&model.CancellationPolicy{})
-	db.DropTable(&model.OtherCondition{})
-	db.DropTable(&model.Fee{})
+	// db.DropTable(&model.Offer{})
+	// db.DropTable(&model.Hotel{})
+	// db.DropTable(&model.Room{})
+	// db.DropTable(&model.RatePlan{})
+	// db.DropTable(&model.Amenity{})
+	// db.DropTable(&model.CancellationPolicy{})
+	// db.DropTable(&model.OtherCondition{})
+	// db.DropTable(&model.Fee{})
 	//
 	db.CreateTable(&model.Offer{})
 	db.CreateTable(&model.Hotel{})
