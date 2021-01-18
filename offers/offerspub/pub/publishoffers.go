@@ -2,16 +2,22 @@ package pub
 
 import (
 	"encoding/json"
-
-	log "github.com/devminnu/assignments/offers/offerspub/logger"
+	"errors"
 
 	"github.com/streadway/amqp"
 
+	log "github.com/devminnu/assignments/offers/offerspub/logger"
 	"github.com/devminnu/assignments/offers/offerspub/model"
 )
 
 func PublishOffers(offers model.Offers) (model.Offers, error) {
+	if len(offers.Offers) == 0 {
+		return model.Offers{}, errors.New("NO_OFFERS")
+	}
 	ch := GetChannel()
+	if ch == nil {
+		return model.Offers{}, errors.New("RABBIT_MQ_CHANNEL_NOT_INITIALIZED")
+	}
 	err := ch.ExchangeDeclare(
 		"publishOffers", // name
 		"fanout",        // type

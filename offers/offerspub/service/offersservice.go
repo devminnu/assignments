@@ -22,5 +22,4 @@ func New() OffersService {
 
 func (service *offersService) PublishOffers(offers model.Offers) (model.Offers, error) {
 	return pub.PublishOffers(offers)
-	// return offers, nil
 }
