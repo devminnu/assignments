@@ -7,13 +7,11 @@ type Offers struct {
 
 //Offer Hotel Offer
 type Offer struct {
-	CmOfferID    string       `json:"cm_offer_id" gorm:"unique"`
+	CmOfferID    string       `json:"cm_offer_id" gorm:"primary_key"`
 	HotelID      string       `json:"hotel_id"`
-	Hotel        Hotel        `json:"hotel" gorm:"foreignKey:HotelID;references:HotelID"` //`json:"hotel" sql:"-"`
-	RoomID       string       `json:"room_id"`
-	Room         Room         `json:"room" gorm:"foreignKey:RoomID;references:RoomID"` //`json:"room" sql:"-"`
-	RatePlanID   string       `json:"rate_plan_id"`
-	RatePlan     RatePlan     `json:"rate_plan" gorm:"foreignKey:RatePlanID;references:RatePlanID"`
+	Hotel        Hotel        `json:"hotel" sql:"-"`
+	Room         Room         `json:"room" sql:"-"`
+	RatePlan     RatePlan     `json:"rate_plan" sql:"-"`
 	OriginalData OriginalData `json:"original_data" gorm:"embedded"`
 	Capacity     Capacity     `json:"capacity" gorm:"embedded"`
 	Number       int          `json:"number"`
@@ -21,7 +19,7 @@ type Offer struct {
 	Currency     string       `json:"currency"`
 	CheckIn      string       `json:"check_in"`
 	CheckOut     string       `json:"check_out"`
-	Fees         []Fee        `json:"fees" gorm:"foreignKey:CmOfferID;references:CmOfferID"`
+	Fees         []Fees       `json:"fees" gorm:"foreignKey:CmOfferID;references:CmOfferID"`
 }
 
 type OriginalData struct {

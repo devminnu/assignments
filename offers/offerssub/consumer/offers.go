@@ -83,6 +83,7 @@ func SubscribeOffers() {
 func ProcessOffers(offers model.Offers) {
 	db := db.Get()
 	for _, offer := range offers.Offers {
+		offer.Hotel.Fees = offer.Fees
 		tx := db.Begin()
 		if err := tx.Create(&offer).Error; err != nil {
 			tx.Rollback()

@@ -1,8 +1,10 @@
 package model
 
+import "gorm.io/gorm"
+
 //Fees Hotel offer fees
-type Fee struct {
-	// gorm.Model
+type Fees struct {
+	gorm.Model
 	CmOfferID   string  `json:"cm_offer_id"`
 	Type        string  `json:"type"`
 	Description string  `json:"description"`
