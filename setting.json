@@ -1,0 +1,50 @@
+{
+  "window.zoomLevel": 1,
+  "editor.suggestSelection": "first",
+  "workbench.iconTheme": "material-icon-theme",
+  "files.autoSave": "onFocusChange",
+  "files.defaultLanguage": "json",
+  "editor.fontSize": 16,
+  "editor.tabSize": 2,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.minimap.maxColumn": 60,
+  "window.restoreFullscreen": true,
+  "window.newWindowDimensions": "fullscreen",
+  "window.openFilesInNewWindow": "on",
+  "window.openFoldersInNewWindow": "on",
+  "go.useLanguageServer": true,
+  "[go]": {
+    // "editor.codeActionsOnSaveTimeout": 750,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+    // Optional: Disable snippets, as they conflict with completion ranking.
+    // "editor.snippetSuggestions": "none",
+  },
+  "[go.mod]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "gopls": {
+    // Add parameter placeholders when completing a function.
+    "usePlaceholders": true,
+    // If true, enable additional analyses with staticcheck.
+    // Warning: This will significantly increase memory usage.
+    "staticcheck": false
+  },
+  "go.languageServerExperimentalFeatures": {
+    "diagnostics": true,
+    "documentLink": true
+  },
+  "vs-kubernetes": {
+    "vs-kubernetes.helm-path.mac": "/Users/minhaj/.vs-kubernetes/tools/helm/darwin-amd64/helm",
+    "vs-kubernetes.draft-path.mac": "/Users/minhaj/.vs-kubernetes/tools/draft/darwin-amd64/draft"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
